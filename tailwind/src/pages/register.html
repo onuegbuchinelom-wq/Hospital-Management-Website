@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>NeloCare | Hospital Management System - Register</title>
+    <link rel="stylesheet" href="../output.css" />
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-up': 'fadeUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .password-eye {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .password-eye:hover {
+            opacity: 0.7;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+        }
+
+        body {
+            background-blend-mode: multiply;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .signup-btn-hover {
+            transition: all 0.25s ease;
+            display: inline-block;
+        }
+
+        .signup-btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.35);
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .stage {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(160deg, #2563eb 0%, #1d4ed8 45%, #16348f 100%);
+        }
+
+        section.app-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-ring {
+            position: relative;
+            padding: 2px;
+            border-radius: 1.75rem;
+            background: linear-gradient(135deg, #7dd3fc, #1d4ed8 35%, #0f2158 65%, #38bdf8);
+            background-size: 300% 300%;
+            animation: ring-shift 8s ease infinite;
+            box-shadow: 0 0 0 1px rgba(186, 230, 253, 0.15),
+                0 25px 60px -15px rgba(15, 33, 88, 0.65),
+                0 0 80px -10px rgba(56, 189, 248, 0.45);
+        }
+
+        @keyframes ring-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card-inner {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            border-radius: 1.6rem;
+        }
+
+        .card-inner::before,
+        .card-inner::after {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 9999px;
+            filter: blur(70px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .card-inner::before {
+            top: -80px;
+            right: -60px;
+            background: radial-gradient(circle, #7dd3fc, transparent 70%);
+        }
+
+        .card-inner::after {
+            bottom: -80px;
+            left: -60px;
+            background: radial-gradient(circle, #1d4ed8, transparent 70%);
+        }
+
+        .sheen {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: linear-gradient(115deg,
+                    transparent 30%,
+                    rgba(255, 255, 255, 0.55) 47%,
+                    rgba(255, 255, 255, 0.55) 53%,
+                    transparent 70%);
+            background-size: 300% 300%;
+            background-position: 130% 0%;
+            mix-blend-mode: overlay;
+            animation: sheen-sweep 7s ease-in-out infinite;
+        }
+
+        @keyframes sheen-sweep {
+            0% {
+                background-position: 130% 0%;
+            }
+
+            45% {
+                background-position: -30% 0%;
+            }
+
+            100% {
+                background-position: -30% 0%;
+            }
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .card-ring,
+            .sheen {
+                animation: none;
+            }
+        }
+
+        .right-panel-scroll {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .right-panel-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .right-panel-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .right-panel-scroll::-webkit-scrollbar-thumb {
+            background: #b3d0ff;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body
+    class="p-6 min-h-screen flex items-center justify-center py-6 sm:py-10 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12">
+
+    <div class="stage" aria-hidden="true"></div>
+
+    <div class="app-card w-full max-w-3xl card-ring animate-fade-up">
+        <section class="card-inner overflow-hidden flex flex-col md:flex-row transition-all duration-300">
+            <div class="sheen"></div>
+
+            <div class="card-content contents">
+
+                <!-- LEFT PANEL -->
+                <div class="md:w-2/5 relative md:h-auto hidden sm:block">
+                    <img src="/tailwind/src/images/m7.png" alt="Doctor"
+                        class="w-full h-64 sm:h-80 md:h-full object-cover" />
+                    <div class="absolute inset-0 bg-blue-700/90"></div>
+                    <div class="absolute inset-0 flex flex-col p-6 sm:p-8 md:p-10">
+                        <a class="flex items-center gap-1.5 group transition duration-300 hover:scale-105 origin-left"
+                            href="/tailwind/src/index.html">
+                            <img class="size-8 sm:size-10 md:size-12 transition duration-300"
+                                src="/tailwind/src/images/logo.svg" alt="NeloCare logo" />
+                            <span class="text-base md:text-lg font-bold text-white">Nelo<span
+                                    class="text-base md:text-lg text-sky-300 font-bold">Care</span></span>
+                        </a>
+                        <div class="mt-10 sm:mt-14 md:mt-16">
+                            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white">
+                                Start your<br />
+                                health journey
+                            </h1>
+                            <div class="mt-8 sm:mt-10 border-l-4 border-white/70 pl-4">
+                                <h2 class="text-base sm:text-lg font-bold text-white">Join NeloCare</h2>
+                                <p class="mt-2 text-blue-100 text-xs sm:text-sm leading-relaxed max-w-xs">
+                                    Create your account to manage appointments, access
+                                    medical records, and connect with your care team.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-6">
+                            <span class="inline-flex items-center gap-1.5 text-blue-200/80 text-xs">
+                                <span class="size-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                                Secure &bull; HIPAA compliant
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="md:w-3/5 p-5 sm:p-8 md:p-10 lg:p-12 right-panel-scroll">
+
+                    <div class="w-full">
+
+                        <!-- MOBILE-ONLY LOGO -->
+                        <a class="flex sm:hidden items-center gap-1.5 mb-5 group transition duration-300 hover:scale-105 origin-left"
+                            href="/tailwind/src/index.html">
+                            <img class="size-9 transition duration-300" src="/tailwind/src/images/logo.svg"
+                                alt="NeloCare logo" />
+                            <span class="text-base font-bold text-blue-600">Nelo<span
+                                    class="text-base text-sky-500 font-bold">Care</span></span>
+                        </a>
+
+                        <!-- HEADER -->
+                        <div class="flex items-center justify-between animate-fade-up">
+                            <div>
+                                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Register</h1>
+                            </div>
+                        </div>
+
+                        <!-- ALERTS -->
+                        <div id="register-error"
+                            class="hidden mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-xs sm:text-sm text-red-700 font-medium">
+                            <span id="register-error-msg"></span>
+                        </div>
+                        <div id="register-success"
+                            class="hidden mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-xs sm:text-sm text-emerald-700 font-medium">
+                            <span id="register-success-msg"></span>
+                        </div>
+
+                        <!-- FORM -->
+                        <form id="register-form">
+
+                            <!-- ROLE SELECTOR -->
+                            <div class="mt-4 sm:mt-5">
+                                <label class="block mb-1.5 sm:mb-2 font-semibold text-gray-700 text-xs sm:text-sm">
+                                    I am registering as a
+                                </label>
+                                <div class="grid grid-cols-2 gap-2 sm:gap-3 max-w-xs">
+                                    <label class="relative">
+                                        <input type="radio" name="role" value="patient" class="peer sr-only" checked />
+                                        <div
+                                            class="cursor-pointer text-center rounded-xl border-2 border-gray-200 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-gray-500 transition peer-checked:border-blue-600 peer-checked:bg-blue-50 peer-checked:text-blue-700">
+                                            Patient
+                                        </div>
+                                    </label>
+                                    <label class="relative">
+                                        <input type="radio" name="role" value="doctor" class="peer sr-only" />
+                                        <div
+                                            class="cursor-pointer text-center rounded-xl border-2 border-gray-200 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-gray-500 transition peer-checked:border-blue-600 peer-checked:bg-blue-50 peer-checked:text-blue-700">
+                                            Doctor
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- FORM FIELDS -->
+                            <div class="mt-5 sm:mt-6 space-y-4 sm:space-y-5">
+
+                                <!-- FULL NAME -->
+                                <div>
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Full Name
+                                    </label>
+                                    <input type="text" id="reg-name" placeholder="Chidi Okonkwo" required
+                                        class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 text-sm" />
+                                </div>
+
+                                <!-- EMAIL -->
+                                <div>
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Email Address
+                                    </label>
+                                    <input type="email" id="reg-email" placeholder="chidi@example.com" required
+                                        class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 text-sm" />
+                                </div>
+
+                                <!-- PHONE -->
+                                <div>
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Phone Number
+                                    </label>
+                                    <input type="tel" id="reg-phone" placeholder="+234 801 234 5678" required
+                                        class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 text-sm" />
+                                </div>
+
+                                <!-- DEPARTMENT (doctor only) -->
+                                <div id="department-field" class="mt-4 sm:mt-5 hidden">
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Department
+                                    </label>
+                                    <select id="reg-department"
+                                        class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 text-sm text-gray-700">
+                                        <option value="" selected disabled>Select your specialty</option>
+                                        <option value="Cardiology">Cardiology</option>
+                                        <option value="Pediatrics">Pediatrics</option>
+                                        <option value="Gynecology">Gynecology</option>
+                                        <option value="Dermatology">Dermatology</option>
+                                        <option value="Neurology">Neurology</option>
+                                        <option value="Orthopedics">Orthopedics</option>
+                                    </select>
+                                </div>
+
+
+                                <!-- PASSWORD – eye icon as image -->
+                                <div>
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Password
+                                    </label>
+                                    <div class="relative">
+                                        <input type="password" id="reg-password" placeholder="••••••••" required
+                                            class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 pr-12 text-sm" />
+                                        <span
+                                            class="password-eye absolute right-3 sm:right-4 inset-y-0 flex items-center select-none"
+                                            aria-label="Show password">
+                                            <img src="https://img.icons8.com/ios/50/000000/visible--v1.png"
+                                                alt="Show password" class="h-5 w-5" />
+                                        </span>
+                                    </div>
+                                    <p class="mt-1 text-[11px] sm:text-xs text-gray-400">
+                                        Must be at least 8 characters with a number and special character.
+                                    </p>
+                                </div>
+
+                                <!-- CONFIRM PASSWORD – eye icon as image -->
+                                <div>
+                                    <label class="block mb-1 sm:mb-1.5 font-semibold text-gray-700 text-xs sm:text-sm">
+                                        Confirm Password
+                                    </label>
+                                    <div class="relative">
+                                        <input type="password" id="reg-confirm-password" placeholder="••••••••" required
+                                            class="w-full border border-gray-300 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-gray-50 pr-12 text-sm" />
+                                        <span
+                                            class="password-eye absolute right-3 sm:right-4 inset-y-0 flex items-center select-none"
+                                            aria-label="Show password">
+                                            <img src="https://img.icons8.com/ios/50/000000/visible--v1.png"
+                                                alt="Show password" class="h-5 w-5" />
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- TERMS -->
+                                <div class="flex items-start gap-2 sm:gap-3 pt-1">
+                                    <input type="checkbox" id="reg-terms"
+                                        class="accent-blue-700 w-4 h-4 sm:w-5 sm:h-5 mt-0.5 cursor-pointer" />
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        I agree to the
+                                        <a href="#" class="text-blue-700 font-semibold hover:underline transition">Terms
+                                            of
+                                            Service</a>
+                                        and
+                                        <a href="#"
+                                            class="text-blue-700 font-semibold hover:underline transition">Privacy
+                                            Policy</a>.
+                                    </p>
+                                </div>
+
+                                <hr class="border-gray-200" />
+
+                                <!-- SUBMIT + LOGIN PROMPT (same width) -->
+                                <div class="flex flex-col items-center gap-3">
+                                    <button type="submit"
+                                        class="w-full max-w-xs bg-blue-600 cursor-pointer hover:bg-blue-700 border text-white text-sm sm:text-md font-bold py-2.5 sm:py-3 rounded-2xl signup-btn-hover text-center transition-all duration-300 shadow-md whitespace-nowrap">
+                                        Create Account
+                                    </button>
+
+                                    <!-- LOGIN PROMPT -->
+                                    <p class="w-full max-w-xs text-center text-xs sm:text-sm text-gray-600">
+                                        Already have an account?
+                                        <a href="/tailwind/src/pages/login.html"
+                                            class="text-blue-700 font-semibold hover:underline transition">Login</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="/tailwind/src/js/authReg.js"></script>
+
+
+</body>
+
+</html>
