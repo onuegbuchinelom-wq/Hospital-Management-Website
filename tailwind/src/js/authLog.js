@@ -8,9 +8,9 @@ const USERS_KEY = "auth_users";
 const SESSION_KEY = "auth_session";
 
 const DASHBOARD_ROUTES = {
-  patient: "/tailwind/src/pages/patientDashboard.html",
-  doctor: "/tailwind/src/pages/doctorDashboard.html",
-  admin: "/tailwind/src/pages/adminDashboard.html",
+  patient: "patientDashboard.html",
+  doctor: "doctorDashboard.html",
+  admin: "adminDashboard.html",
 };
 const DEFAULT_DASHBOARD = DASHBOARD_ROUTES.admin;
 
