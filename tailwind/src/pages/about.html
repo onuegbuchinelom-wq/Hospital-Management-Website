@@ -4,13 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>NeloCare | About Us - Compassion & Excellence</title>
-  <link rel="stylesheet" href="/tailwind/src/output.css">
-  <link rel="stylesheet" href="../output.css">
+  <title>NeloCare | About Us - Compassion & Excellence</title>  <link rel="stylesheet" href="../output.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Custom animations & enhancements */
     @keyframes fadeUp {
       0% {
         opacity: 0;
@@ -72,7 +69,6 @@
       animation: float 0.5s ease-in-out;
     }
 
-    /* smooth scroll & responsive helper */
     html {
       scroll-behavior: smooth;
     }
@@ -81,7 +77,6 @@
       overflow-x: hidden;
     }
 
-    /* custom card styling */
     .value-card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -95,12 +90,10 @@
       backdrop-filter: blur(2px);
     }
 
-    /* responsive hero fix */
     .hero-overlay {
       background: linear-gradient(135deg, rgba(29, 78, 216, 0.85) 0%, rgba(2, 27, 90, 0.8) 100%);
     }
 
-    /* improved mobile spacing */
     @media (max-width: 768px) {
       .container-padding {
         padding-left: 1.25rem;
@@ -108,7 +101,6 @@
       }
     }
 
-    /* ===== HAMBURGER MENU STYLES - PURE CSS, NO JAVASCRIPT ===== */
     #mobile-menu-toggle {
       display: none;
     }
@@ -169,7 +161,6 @@
       transform: rotate(-45deg) translate(7px, -7px);
     }
 
-    /* Hide hamburger on desktop, show on mobile */
     @media (min-width: 1024px) {
       .hamburger-button {
         display: none !important;
@@ -181,14 +172,12 @@
       }
     }
 
-    /* Show desktop navigation on tablet and desktop, hide on mobile */
     @media (max-width: 767px) {
       .desktop-nav-links {
         display: none !important;
       }
     }
 
-    /* Tablet specific header adjustments (768px - 1023px) */
     @media (min-width: 768px) and (max-width: 1023px) {
       .desktop-nav-links {
         display: flex !important;
@@ -231,7 +220,6 @@
       border-radius: 4px;
     }
 
-    /* Prevent body scroll when menu is open using :has() selector (modern CSS) */
     body:has(#mobile-menu-toggle:checked) {
       overflow: hidden;
     }
@@ -240,19 +228,15 @@
 
 <body class="bg-blue-50 font-sans antialiased">
 
-  <!-- Hidden Checkbox for mobile menu -->
   <input type="checkbox" id="mobile-menu-toggle">
 
-  <!-- Overlay (closes menu when clicked via label) -->
   <label for="mobile-menu-toggle" class="menu-overlay"></label>
 
-  <!-- Mobile Menu Sidebar (Dashboard Style) -->
   <div class="mobile-menu-container">
     <div class="flex flex-col h-full">
-      <!-- Mobile Menu Header -->
       <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-200">
-        <a class="flex items-center gap-2" href="/tailwind/src/index.html">
-          <img class="w-10 h-10" src="/tailwind/src/images/logo.svg" alt="NeloCare logo">
+        <a class="flex items-center gap-2" href="../index.html">
+          <img class="w-10 h-10" src="../images/logo.svg" alt="NeloCare logo">
           <span class="text-lg font-bold text-blue-600">Nelo</span>
           <span class="text-lg text-sky-500 font-bold">Care</span>
         </a>
@@ -260,7 +244,6 @@
           class="text-2xl cursor-pointer text-gray-500 hover:text-gray-800">&times;</label>
       </div>
 
-      <!-- Mobile Navigation Links -->
       <nav class="flex-1">
 
         <ul class="space-y-2">
@@ -268,7 +251,7 @@
           <li>
             <label for="mobile-menu-toggle" class="block cursor-pointer">
               <a class="block py-2.5 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 font-medium"
-                href="/tailwind/src/index.html"> Home
+                href="../index.html"> Home
               </a>
             </label>
           </li>
@@ -276,7 +259,7 @@
           <li>
             <label for="mobile-menu-toggle" class="block cursor-pointer">
               <a class="block py-2.5 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 font-medium"
-                href="/tailwind/src/pages/about.html">About
+                href="about.html">About
               </a>
             </label>
           </li>
@@ -284,7 +267,7 @@
           <li>
             <label for="mobile-menu-toggle" class="block cursor-pointer">
               <a class="block py-2.5 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 font-medium"
-                href="/tailwind/src/pages/services.html"> Services
+                href="services.html"> Services
               </a>
             </label>
           </li>
@@ -308,42 +291,42 @@
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Cardiology.html"> Cardiology</a>
+                    href="Cardiology.html"> Cardiology</a>
                 </label>
               </li>
 
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Gynecology.html"> Gynecology</a>
+                    href="Gynecology.html"> Gynecology</a>
                 </label>
               </li>
 
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Pediatrics.html"> Pediatrics</a>
+                    href="Pediatrics.html"> Pediatrics</a>
                 </label>
               </li>
 
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Neurology.html"> Neurology</a>
+                    href="Neurology.html"> Neurology</a>
                 </label>
               </li>
 
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Dermatology.html"> Dermatology</a>
+                    href="Dermatology.html"> Dermatology</a>
                 </label>
               </li>
 
               <li>
                 <label for="mobile-menu-toggle" class="block cursor-pointer">
                   <a class="block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 text-sm"
-                    href="/tailwind/src/pages/Orthopedics.html"> Orthopedics</a>
+                    href="Orthopedics.html"> Orthopedics</a>
                 </label>
               </li>
 
@@ -354,7 +337,7 @@
           <li>
             <label for="mobile-menu-toggle" class="block cursor-pointer">
               <a class="block py-2.5 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition duration-200 font-medium"
-                href="/tailwind/src/pages/contact.html"> Contact
+                href="contact.html"> Contact
               </a>
             </label>
           </li>
@@ -364,22 +347,20 @@
       </nav>
 
 
-      <!-- Mobile Appointment Button inside menu -->
       <div class="mt-4 pt-4 border-t border-gray-200">
         <label for="mobile-menu-toggle" class="block cursor-pointer">
           <a class="px-10 py-2 mr-6 md:px-4 lg:px-5 md:py-2 mr-0 md:mr-3 lg:mr-2 bg-blue-600 hover:bg-blue-400 text-white text-xs lg:text-sm font-bold rounded-2xl transition whitespace-nowrap inline-block appointment-btn"
-            href="/tailwind/src/pages/login.html">Login
+            href="login.html">Login
           </a>
 
           <a class="px-10 py-2 md:px-4 lg:px-5 md:py-2 mr-0 md:mr-3 lg:mr-2 bg-blue-600 hover:bg-blue-400 text-white text-xs lg:text-sm font-bold rounded-2xl transition whitespace-nowrap inline-block appointment-btn"
-            href="/tailwind/src/pages/register.html">Register
+            href="register.html">Register
           </a>
 
         </label>
 
       </div>
 
-      <!-- Footer in Mobile Menu -->
       <div class="mt-6 pt-4 text-center text-xs text-gray-400">
         <p>© 2026 NeloCare. All rights reserved.</p>
       </div>
@@ -390,52 +371,49 @@
     class="fixed top-0 flex flex-wrap justify-between items-center py-3 px-4 md:px-6 bg-white shadow-md w-full z-50">
 
     <div>
-      <a class="flex items-center gap-2 md:gap-0.6 ml-2 md:ml-5 lg:ml-20 header-logo" href="/tailwind/src/index.html">
+      <a class="flex items-center gap-2 md:gap-0.6 ml-2 md:ml-5 lg:ml-20 header-logo" href="../index.html">
         <img class="w-10 h-10 md:w-12 md:h-12 transition hover:scale-105 duration-300 animate-fadeUp"
-          src="/tailwind/src/images/logo.svg" alt="NeloCare logo">
+          src="../images/logo.svg" alt="NeloCare logo">
         <span class="text-base md:text-lg font-bold text-blue-600">Nelo<span
             class="text-base md:text-lg text-sky-500 font-bold">Care</span></span>
 
       </a>
     </div>
 
-    <!-- Desktop Navigation - Visible on tablet and desktop, hidden on mobile -->
     <ul class="desktop-nav-links flex flex-wrap justify-center items-center gap-2 md:gap-3 lg:gap-6 
             text-xs lg:text-sm py-2 w-auto order-last md:order-none mt-2 md:mt-0 bg-white rounded-full px-2 lg:px-3 
             shadow-sm md:shadow-none">
 
       <li>
         <a class="hover:text-blue-400 transition duration-300 hover:-translate-y-1 inline-block animate-fadeUp delay-100 whitespace-nowrap px-1 lg:px-0"
-          href="/tailwind/src/index.html">Home
+          href="../index.html">Home
         </a>
       </li>
 
       <li>
         <a class="hover:text-blue-400 transition duration-300 hover:-translate-y-1 inline-block animate-fadeUp delay-100 whitespace-nowrap px-1 lg:px-0"
-          href="/tailwind/src/pages/about.html">About
+          href="about.html">About
         </a>
       </li>
 
       <li>
         <a class="hover:text-blue-400 transition duration-300 hover:-translate-y-1 inline-block animate-fadeUp delay-100 whitespace-nowrap px-1 lg:px-0"
-          href="/tailwind/src/pages/services.html">Services
+          href="services.html">Services
         </a>
       </li>
 
-      <!-- Doctors Dropdown -->
       <li class="relative group">
 
         <button class="bg-transparent border-none cursor-pointer font-inherit text-inherit
                                    inline-flex items-center gap-1 px-1 lg:px-0 whitespace-nowrap
                                    hover:text-blue-400 hover:-translate-y-1 transition duration-300">
-          <a href="/tailwind/src/pages/doctors.html">Doctors</a>
+          <a href="doctors.html">Doctors</a>
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none"
             stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
 
-        <!-- Dropdown Menu -->
         <ul class="absolute left-0 top-full mt-2 w-40 bg-white rounded-lg shadow-lg py-1.5 z-50
                                list-none p-0
                                opacity-0 invisible translate-y-2
@@ -444,37 +422,37 @@
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Cardiology.html">Cardiology
+              href="Cardiology.html">Cardiology
             </a>
           </li>
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Gynecology.html">Gynecology
+              href="Gynecology.html">Gynecology
             </a>
           </li>
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Pediatrics.html">Pediatrics
+              href="Pediatrics.html">Pediatrics
             </a>
           </li>
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Neurology.html">Neurology
+              href="Neurology.html">Neurology
             </a>
           </li>
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Dermatology.html">Dermatology
+              href="Dermatology.html">Dermatology
             </a>
           </li>
 
           <li>
             <a class="block px-4 py-2 whitespace-nowrap hover:bg-blue-50 hover:text-blue-400 transition duration-200"
-              href="/tailwind/src/pages/Orthopedics.html">Orthopedics
+              href="Orthopedics.html">Orthopedics
             </a>
           </li>
 
@@ -482,26 +460,23 @@
 
       </li>
 
-      <!-- Contact -->
       <li>
         <a class="hover:text-blue-400 transition duration-300 hover:-translate-y-1 inline-block
-                              whitespace-nowrap px-1 lg:px-0" href="/tailwind/src/pages/contact.html">Contact
+                              whitespace-nowrap px-1 lg:px-0" href="contact.html">Contact
         </a>
       </li>
 
     </ul>
 
-    <!-- Desktop Appointment Button - Visible on tablet and desktop -->
     <div class="hidden md:block mt-2 md:mt-0">
       <a class="px-3 py-2 md:px-4 lg:px-5 md:py-2 mr-0 md:mr-3 lg:mr-2 bg-blue-600 hover:bg-blue-400 text-white text-xs lg:text-sm font-bold rounded-2xl transition whitespace-nowrap inline-block appointment-btn"
-        href="/tailwind/src/pages/login.html">Login</a>
+        href="login.html">Login</a>
 
       <a class="px-3 py-2 md:px-4 lg:px-5 md:py-2 mr-0 md:mr-3 lg:mr-20 bg-blue-600 hover:bg-blue-400 text-white text-xs lg:text-sm font-bold rounded-2xl transition whitespace-nowrap inline-block appointment-btn"
-        href="/tailwind/src/pages/register.html">Register</a>
+        href="register.html">Register</a>
 
     </div>
 
-    <!-- Hamburger Button (Mobile only) - Label toggles checkbox -->
     <label for="mobile-menu-toggle" class="hamburger-button flex flex-col gap-1.5 cursor-pointer z-[1001] relative p-2">
       <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded-full"></span>
       <span class="hamburger-line w-6 h-0.5 bg-gray-800 rounded-full"></span>
@@ -512,10 +487,9 @@
 
   <main class="pt-20 md:pt-24">
 
-    <!-- PAGE 1 -->
     <section
       class="relative bg-blue-500 bg-blend-multiply h-72 md:h-80 lg:h-96 bg-cover bg-center bg-no-repeat flex items-center justify-start"
-      style="background-image: url(/tailwind/src/images/bg3.png);">
+      style="background-image: url(../images/bg3.png);">
 
       <div class="relative z-10 px-6 md:px-12 lg:px-24 w-full animate-fadeUp">
 
@@ -533,7 +507,6 @@
     </section>
 
 
-    <!-- PAGE 2 -->
     <section class="max-w-7xl mx-auto px-5 md:px-8 lg:px-10 lg:ml-23 lg:mr-20 py-12 md:py-16">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -564,7 +537,7 @@
         </div>
 
         <div class="relative  rounded-2xl overflow-hidden shadow-2xl group">
-          <img src="/tailwind/src/images/image1.png" alt="NeloCare Story"
+          <img src="../images/image1.png" alt="NeloCare Story"
             class="w-full h-auto object-cover rounded-2xl transition duration-500 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent rounded-2xl"></div>
         </div>
@@ -572,7 +545,6 @@
 
     </section>
 
-    <!-- PAGE 3 -->
     <section class="max-w-7xl mx-auto px-5 md:px-8 lg:ml-23 lg:mr-20 mb-12">
 
       <div class="border-l-4 border-blue-600 pl-5 mb-6">
@@ -588,7 +560,6 @@
 
     </section>
 
-    <!-- PAGE 4 -->
     <section class="bg-blue-50 w-full py-12 md:py-16 mt-6">
 
       <div class="max-w-7xl mx-auto px-5 md:px-8 lg:ml-23 lg:mr-20">
@@ -727,7 +698,7 @@
       <h3 class="text-white text-2xl md:text-3xl font-bold mb-3">Ready to experience compassionate care?</h3>
       <p class="text-blue-100 text-lg mb-6">Join thousands of patients who trust NeloCare for their health journey.
       </p>
-      <a href="/tailwind/src/pages/appointment.html"
+      <a href="appointment.html"
         class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition-all shadow-lg text-lg">
         Schedule an Appointment <i class="fas fa-arrow-right"></i>
       </a>
@@ -737,7 +708,7 @@
     <section class="max-w-7xl mt-2 mx-auto px-4 md:px-6 lg:px-8 mb-16">
 
       <div class="text-center">
-        <p class="text-gray-600">Frequently asked questions? <a href="/tailwind/src/pages/faq.html"
+        <p class="text-gray-600">Frequently asked questions? <a href="faq.html"
             class="text-blue-600 font-semibold hover:underline">Visit our FAQ page →</a></p>
       </div>
 
@@ -749,8 +720,8 @@
       <div class="max-w-7xl mx-auto">
 
         <div class="ml-0 md:ml-6">
-          <a class="flex items-center gap-2" href="/tailwind/src/index.html">
-            <img class="w-10 h-10" src="/tailwind/src/images/logo.svg" alt="NeloCare logo">
+          <a class="flex items-center gap-2" href="../index.html">
+            <img class="w-10 h-10" src="../images/logo.svg" alt="NeloCare logo">
             <span class="text-xl font-bold text-white">NeloCare</span>
           </a>
         </div>
@@ -788,9 +759,9 @@
               Now</a>
 
             <div class="flex gap-5 mt-6">
-              <a href="#"><img class="w-5 h-5" src="/tailwind/src/images/facebook.png" alt="Facebook"></a>
-              <a href="#"><img class="w-5 h-5" src="/tailwind/src/images/twitter.avif" alt="Twitter"></a>
-              <a href="#"><img class="w-5 h-5" src="/tailwind/src/images/instagram.avif" alt="Instagram"></a>
+              <a href="#"><img class="w-5 h-5" src="../images/facebook.png" alt="Facebook"></a>
+              <a href="#"><img class="w-5 h-5" src="../images/twitter.avif" alt="Twitter"></a>
+              <a href="#"><img class="w-5 h-5" src="../images/instagram.avif" alt="Instagram"></a>
             </div>
 
           </div>
@@ -810,6 +781,6 @@
 
 </body>
 
-<script src="/tailwind/src/js/newsletter.js"></script>
+<script src="../js/newsletter.js"></script>
 
 </html>
